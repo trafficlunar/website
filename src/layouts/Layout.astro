@@ -1,0 +1,59 @@
+---
+import "@fontsource-variable/inter";
+import "@fontsource-variable/jetbrains-mono";
+
+import "../style.css";
+
+import { ClientRouter } from "astro:transitions";
+
+import Socials from "../components/Socials.astro";
+import Clock from "../components/Clock.svelte";
+import Footer from "../components/Footer.astro";
+
+import KawaiiLogo from "../assets/kawaii.svg";
+
+import TrafficCone from "../assets/traffic-cone.svg";
+import TrafficConeAlt from "../assets/traffic-cone-alt.svg";
+import Construction from "../assets/construction.svg";
+import Lunar from "../assets/lunar.svg";
+---
+
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="viewport" content="width=device-width" />
+		<meta name="generator" content={Astro.generator} />
+		<title>trafficlunar.net</title>
+		<ClientRouter />
+	</head>
+	<body class="bg-base text-text flex flex-col items-center">
+		<a href="/" transition:persist>
+			<KawaiiLogo class="w-full h-48 mt-16 transition-transform duration-300 hover:rotate-2 hover:scale-105" />
+		</a>
+
+		<Lunar class="fixed top-8 right-8 size-12 cursor-pointer animate-avoid hover:animate-running not-hover:animate-pause" />
+		<TrafficConeAlt class="fixed size-12 bottom-0 left-8 text-peach" />
+		<TrafficConeAlt class="fixed size-14 bottom-0 left-19 text-peach" />
+
+		<div class="max-w-4xl grid grid-cols-5 gap-4 py-8">
+			<div transition:persist>
+				<a href="/">
+					<img
+						src="/pfp.png"
+						alt="profile picture"
+						class="rounded-full animate-spin animate-duration-2s hover:animate-running not-hover:animate-pause"
+					/>
+				</a>
+
+				<Socials />
+				<Clock client:only />
+			</div>
+
+			<div class="col-span-4 flex flex-col">
+				<slot />
+				<Footer />
+			</div>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,12 @@
+---
+import child_process from "child_process";
+
+// Get commit hash
+const hash = child_process.execSync("git rev-parse --short HEAD").toString().trim();
+---
+
+<footer class="flex justify-between gap-3 text-peach/50 *:hover:text-peach *:transition-colors text-sm mt-4">
+	<a href="https://github.com/trafficlunar/website">Source code</a>
+	<!-- <span>•</span> -->
+	<a href=`https://github.com/trafficlunar/website/commit/${hash}` class="font-mono">{hash}</a>
+</footer>

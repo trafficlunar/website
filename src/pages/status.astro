@@ -1,0 +1,20 @@
+---
+import Layout from "../layouts/Layout.astro";
+
+import Music from "../components/Music.svelte";
+---
+
+<Layout>
+	<section class="!mb-0 !pt-3">
+		<legend>status</legend>
+
+		<div class="flex items-center gap-4 text-subtext0 text-sm font-medium mb-2">
+			<hr class="flex-grow border-surface1" />
+			<span>last.fm</span>
+			<hr class="flex-grow border-surface1" />
+		</div>
+		<Music client:only />
+
+		<p class="text-center mt-4 text-subtext1 text-sm">more coming soon...</p>
+	</section>
+</Layout>

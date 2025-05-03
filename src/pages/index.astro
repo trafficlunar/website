@@ -1,16 +1,37 @@
 ---
+import Layout from "../layouts/Layout.astro";
 
+import Projects from "../components/Projects.svelte";
+import Tools from "../components/Tools.astro";
+
+import PersonIcon from "../assets/icons/person.svg";
+import LocationIcon from "../assets/icons/location.svg";
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<Layout>
+	<section>
+		<legend>about</legend>
+		<p>Hey there, I'm <strong class="text-peach">trafficlunar</strong>. I'm a 15 year old self-proclaimed full-stack developer and sysadmin.</p>
+
+		<div class="flex gap-1 mt-2">
+			<div class="text-sm rounded-lg bg-peach/25 text-peach w-fit px-2 py-0.5 flex gap-1 items-center">
+				<PersonIcon />
+				he/him
+			</div>
+			<div class="text-sm rounded-lg bg-peach/25 text-peach w-fit pl-1 pr-2 py-0.5 flex gap-1 items-center">
+				<LocationIcon />
+				Scotland
+			</div>
+		</div>
+	</section>
+
+	<Tools />
+
+	<div class="flex items-center gap-4 text-subtext0 text-sm font-medium my-4">
+		<hr class="flex-grow border-surface1" />
+		<span>projects</span>
+		<hr class="flex-grow border-surface1" />
+	</div>
+
+	<Projects client:only />
+</Layout>
