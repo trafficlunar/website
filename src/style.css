@@ -81,6 +81,10 @@ section legend {
 	@apply bg-mantle/75 absolute -left-[1px] bottom-full px-2 py-0.5 text-overlay2 font-medium text-xs rounded-t-md border border-surface0 border-b-0 font-sans;
 }
 
+.link {
+	@apply text-peach underline decoration-peach hover:bg-peach hover:text-base;
+}
+
 [data-tooltip] {
 	@apply relative z-10;
 }
