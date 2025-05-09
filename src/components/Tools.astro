@@ -11,6 +11,10 @@ import SvelteIcon from "../assets/icons/coding/svelte.svg";
 import ReactIcon from "../assets/icons/coding/react.svg";
 import NextIcon from "../assets/icons/coding/next.svg";
 import AstroIcon from "../assets/icons/coding/astro.svg";
+import TailwindIcon from "../assets/icons/coding/tailwind.svg";
+import PostgresIcon from "../assets/icons/coding/postgres.svg";
+import DockerIcon from "../assets/icons/coding/docker.svg";
+import LinuxIcon from "../assets/icons/coding/linux.svg";
 ---
 
 <section class="!mb-0">
@@ -90,6 +94,31 @@ import AstroIcon from "../assets/icons/coding/astro.svg";
 		<div>
 			<AstroIcon class="size-5" />
 			<span>Astro</span>
+		</div>
+		<div>
+			<TailwindIcon class="size-5" />
+			<span>Tailwind</span>
+		</div>
+	</div>
+
+	<!-- separator -->
+	<div class="flex items-center gap-4 text-subtext0 text-sm font-medium my-2">
+		<hr class="w-4 border-surface1" />
+		<span>infrastructure</span>
+		<hr class="flex-grow border-surface1" />
+	</div>
+	<div class="flex gap-1 *:bg-surface0/50 *:border *:border-surface1 *:rounded-md *:p-1.5 *:text-sm *:flex *:items-center *:gap-1.5">
+		<div>
+			<PostgresIcon class="size-5" />
+			<span>PostgreSQL</span>
+		</div>
+		<div>
+			<DockerIcon class="size-5" />
+			<span>Docker</span>
+		</div>
+		<div>
+			<LinuxIcon class="size-5" />
+			<span>Linux</span>
 		</div>
 	</div>
 </section>
