@@ -1,6 +1,7 @@
 ---
 import Layout from "../layouts/Layout.astro";
 
+import Age from "../components/Age.svelte";
 import Projects from "../components/Projects.svelte";
 import Tools from "../components/Tools.astro";
 
@@ -11,7 +12,9 @@ import LocationIcon from "../assets/icons/location.svg";
 <Layout>
 	<section>
 		<legend>about</legend>
-		<p>Hey there, I'm <strong class="text-peach">trafficlunar</strong>. I'm a 15 year old self-proclaimed full-stack developer and sysadmin.</p>
+		<p>
+			Hey there, I'm <strong class="text-peach">trafficlunar</strong>. I'm a <Age client:only /> year old self-proclaimed full-stack developer and sysadmin.
+		</p>
 		<p>You can view what I'm currently doing by going <a href="/status" class="link">here</a>.</p>
 
 		<div class="flex gap-1 mt-2">
