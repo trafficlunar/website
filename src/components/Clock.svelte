@@ -17,7 +17,7 @@
 	});
 </script>
 
-<section class="font-mono !py-2.5">
+<section class="font-mono !py-2.5 min-w-40 h-min">
 	<legend>clock</legend>
 
 	<span class="block font-bold text-lg">{clock}</span>

@@ -34,7 +34,7 @@
 	});
 </script>
 
-<div class="grid grid-cols-2 gap-4">
+<div class="grid grid-cols-2 gap-4 max-sm:grid-cols-1">
 	{#each projects as project}
 		<a href={project.url} class="group">
 			<section class="h-full flex flex-col">
