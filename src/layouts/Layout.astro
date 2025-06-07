@@ -38,10 +38,10 @@ import Lunar from "../assets/lunar.svg";
 			<KawaiiLogo class="w-full h-48 mt-16 transition-transform duration-300 hover:rotate-2 hover:scale-105" />
 		</a>
 
-		<Lunar class="absolute top-8 right-8 size-12 cursor-pointer animate-avoid hover:animate-running not-hover:animate-pause" />
+		<Lunar class="absolute top-8 right-8 size-12 animate-avoid hover:animate-running not-hover:animate-pause" />
 
-		<div class="max-w-4xl grid grid-cols-5 gap-4 py-8 max-[56rem]:grid-cols-1">
-			<div class="flex flex-col items-center max-[56rem]:flex-row max-[56rem]:justify-center max-sm:flex-col gap-8" transition:persist>
+		<div class="max-w-4xl grid grid-cols-5 gap-4 py-8 max-sm:grid-cols-1">
+			<div class="flex flex-col items-center gap-8 max-[56rem]:flex-row" transition:persist>
 				<a href="/">
 					<img
 						src="/pfp.png"
@@ -50,13 +50,13 @@ import Lunar from "../assets/lunar.svg";
 					/>
 				</a>
 
-				<div class="flex flex-col justify-center max-sm:flex-row max-[56rem]:items-center max-[56rem]:mt-8 max-sm:mt-0 max-sm:gap-2">
+				<div class="flex flex-col justify-center w-full max-sm:flex-row max-sm:mt-0 max-sm:gap-2">
 					<Socials />
 					<Clock client:only />
 				</div>
 			</div>
 
-			<div class="col-span-4 flex flex-col relative">
+			<div class="min-sm:col-span-4 flex flex-col relative">
 				<TrafficConeAlt class="absolute size-12 bottom-full left-16 text-peach" />
 				<TrafficConeAlt class="absolute size-14 bottom-full left-27 text-peach" />
 
