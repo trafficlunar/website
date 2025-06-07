@@ -37,7 +37,7 @@
 <div class="grid grid-cols-2 gap-4 max-sm:grid-cols-1">
 	{#each projects as project}
 		<a href={project.url} class="group">
-			<section class="h-full flex flex-col">
+			<section class="h-full flex flex-col transition-colors group-hover:!border-peach/50">
 				<h1 class="font-medium text-xl mb-1 text-nowrap overflow-hidden text-ellipsis w-11/12" title={project.name}>{project.name}</h1>
 				<p class="mb-4 text-sm text-subtext0">{project.description}</p>
 
