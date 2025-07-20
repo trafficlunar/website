@@ -26,8 +26,8 @@
 	});
 </script>
 
-<a href={url} class="block relative h-20 group">
-	<div class="absolute size-full rounded-md flex gap-2 bg-mantle border border-surface0 z-10"></div>
+<a href={url} class="block relative h-24 group">
+	<div class="absolute size-full rounded-md bg-mantle border border-surface0 z-10"></div>
 
 	<div class="flex justify-center items-center absolute -top-2 right-2 z-0">
 		<div class="w-4 h-4 rounded-full {playing ? 'bg-green' : 'bg-red'}"></div>
@@ -35,7 +35,7 @@
 	</div>
 
 	<div class="absolute p-2 flex gap-2 z-30 w-full">
-		<img src={image} alt="album cover" class="size-16 rounded-full animate-spin animate-duration-30s" />
+		<img src={image} alt="album cover" class="size-20 rounded-full animate-spin animate-duration-30s" />
 
 		<div class="flex flex-col w-full min-w-0">
 			<h1 class="font-medium">{song}</h1>

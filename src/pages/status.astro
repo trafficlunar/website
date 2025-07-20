@@ -2,19 +2,25 @@
 import Layout from "../layouts/Layout.astro";
 
 import Music from "../components/Music.svelte";
+import Computer from "../components/Computer.svelte";
 ---
 
 <Layout>
 	<section class="!mb-0 !pt-3">
 		<legend>status</legend>
 
-		<div class="flex items-center gap-4 text-subtext0 text-sm font-medium mb-2">
+		<div class="flex items-center gap-4 text-subtext0 text-sm font-medium mb-4">
 			<hr class="flex-grow border-surface1" />
 			<span>last.fm</span>
 			<hr class="flex-grow border-surface1" />
 		</div>
 		<Music client:only />
 
-		<p class="text-center mt-4 text-subtext1 text-sm">more coming soon...</p>
+		<div class="flex items-center gap-4 text-subtext0 text-sm font-medium mt-4">
+			<hr class="flex-grow border-surface1" />
+			<span>computer</span>
+			<hr class="flex-grow border-surface1" />
+		</div>
+		<Computer client:only />
 	</section>
 </Layout>
