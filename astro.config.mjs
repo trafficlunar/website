@@ -8,6 +8,8 @@ import nekoweb from "@indiefellas/astro-adapter-nekoweb";
 import svelte from "@astrojs/svelte";
 import sitemap from "@astrojs/sitemap";
 
+import swup, { Theme } from "@swup/astro";
+
 const { NEKOWEB_API_KEY, NEKOWEB_COOKIE } = loadEnv(env.NODE_ENV ?? "", process.cwd(), "");
 
 // https://astro.build/config
@@ -21,5 +23,5 @@ export default defineConfig({
 		cookie: NEKOWEB_COOKIE,
 		folder: "dist",
 	}),
-	integrations: [svelte(), sitemap()],
+	integrations: [svelte(), sitemap(), swup()],
 });

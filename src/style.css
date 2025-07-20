@@ -46,7 +46,12 @@
 	--color-mantle: #292c3c;
 	--color-crust: #232634;
 
+	--color-base-darker: #2b2e3f;
 	--color-peach-darker: #695454;
+}
+
+body {
+	--swup-fade-theme-duration: 0.2s;
 }
 
 @utility animate-duration-30s {
@@ -70,7 +75,7 @@
 }
 
 section {
-	@apply bg-mantle/75 p-4 rounded-lg relative border border-surface0 shadow-md;
+	@apply bg-base-darker p-4 rounded-lg relative border border-surface0 shadow-md;
 }
 
 section:has(legend) {
@@ -78,7 +83,7 @@ section:has(legend) {
 }
 
 section legend {
-	@apply bg-mantle/75 absolute -left-[1px] bottom-full px-2 py-0.5 text-overlay2 font-medium text-xs rounded-t-md border border-surface0 border-b-0 font-sans;
+	@apply bg-base-darker absolute -left-[1px] bottom-full px-2 py-0.5 text-overlay2 font-medium text-xs rounded-t-md border border-surface0 border-b-0 font-sans;
 }
 
 .link {
