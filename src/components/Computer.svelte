@@ -72,7 +72,10 @@
 		};
 
 		const setUptime = () => {
-			if (!uptimeStart) return;
+			if (!uptimeStart || !online) {
+				uptime = "Offline";
+				return;
+			}
 			const diff = Math.floor((Date.now() - uptimeStart.getTime()) / 1000);
 			const hrs = String(Math.floor(diff / 3600)).padStart(2, "0");
 			const mins = String(Math.floor((diff % 3600) / 60)).padStart(2, "0");
