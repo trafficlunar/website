@@ -2,22 +2,7 @@
 	import { Area, Axis, Chart, Highlight, LinearGradient, Svg, Tooltip } from "layerchart";
 	import { scaleTime } from "d3-scale";
 	import { onMount } from "svelte";
-
-	interface ApiResponse {
-		online: boolean;
-		uptimeStart: number;
-		totals: {
-			keys: number;
-			clicks: number;
-		};
-		graph: {
-			timestamp: string;
-			cpu: number;
-			ram: number;
-			keys: number;
-			clicks: number;
-		}[];
-	}
+	import { computerData } from "../states.svelte";
 
 	type GraphData = {
 		timestamp: Date;
@@ -44,8 +29,8 @@
 		let uptimeStart: Date;
 
 		const get = async () => {
-			const request = await fetch("https://api.trafficlunar.net/computer");
-			const data = (await request.json()) as ApiResponse;
+			const data = computerData.data; // no point in this; looks better
+			if (!data) return;
 
 			online = data.online;
 			uptimeStart = new Date(data.uptimeStart * 1000); // convert to milliseconds

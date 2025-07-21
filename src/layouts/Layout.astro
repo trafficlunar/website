@@ -6,6 +6,7 @@ import "../style.css";
 
 import Socials from "../components/Socials.astro";
 import Clock from "../components/Clock.svelte";
+import Online from "../components/Online.svelte";
 import Footer from "../components/Footer.astro";
 
 import KawaiiLogo from "../assets/kawaii.svg";
@@ -49,6 +50,7 @@ import Lunar from "../assets/lunar.svg";
 				<div class="flex flex-col justify-center w-fit max-[60rem]:flex-row max-[60rem]:mt-0 max-[60rem]:gap-2">
 					<Socials />
 					<Clock client:only />
+					<Online client:only />
 				</div>
 			</div>
 

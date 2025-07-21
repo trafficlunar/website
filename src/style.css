@@ -76,7 +76,11 @@ body {
 }
 
 section {
-	@apply bg-base-darker p-4 rounded-lg relative border border-surface0 shadow-md;
+	@apply bg-base-darker p-4 rounded-lg relative border border-surface0 shadow-md h-min;
+}
+
+section.side {
+	@apply w-40 font-mono py-2.5;
 }
 
 section:has(legend) {
