@@ -173,8 +173,8 @@
 				{#snippet children({ data })}
 					<Tooltip.Header value={data.timestamp} format="time" classes={{ root: "border-peach" }} />
 					<Tooltip.List>
-						<Tooltip.Item label="RAM (%)" value={data.ram} format="percentRound" />
-						<Tooltip.Item label="CPU (%)" value={data.cpu} format="percentRound" />
+						<Tooltip.Item label="RAM (%)" value={data.ram} format="percentRound" classes={{ value: "font-mono font-black" }} />
+						<Tooltip.Item label="CPU (%)" value={data.cpu} format="percentRound" classes={{ value: "font-mono font-black" }} />
 					</Tooltip.List>
 				{/snippet}
 			</Tooltip.Root>
@@ -220,8 +220,8 @@
 			{#snippet children({ data })}
 				<Tooltip.Header value={data.timestamp} format="time" classes={{ root: "border-peach" }} />
 				<Tooltip.List>
-					<Tooltip.Item label="Keys" value={data.keys} />
-					<Tooltip.Item label="Clicks" value={data.clicks} />
+					<Tooltip.Item label="Keys" value={data.keys} classes={{ value: "font-mono font-black" }} />
+					<Tooltip.Item label="Clicks" value={data.clicks} classes={{ value: "font-mono font-black" }} />
 				</Tooltip.List>
 			{/snippet}
 		</Tooltip.Root>
