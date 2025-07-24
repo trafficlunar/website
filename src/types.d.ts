@@ -2,6 +2,7 @@ interface ApiResponse {
 	online: boolean;
 	uptimeStart: number;
 	totals: {
+		uptime: number;
 		keys: number;
 		clicks: number;
 	};

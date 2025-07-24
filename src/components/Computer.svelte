@@ -20,21 +20,25 @@
 	let keysPerMinute = $state(0);
 
 	let uptime = $state("");
+	let allTimeUptime = $state("");
 	let allTimeClicks = $state(0);
 	let allTimeKeys = $state(0);
 
 	let chartData = $state<GraphData>([]);
 
-	onMount(() => {
-		let uptimeStart: Date;
+	const formatTime = (time: number): string => {
+		const hrs = String(Math.floor(time / 3600)).padStart(2, "0");
+		const mins = String(Math.floor((time % 3600) / 60)).padStart(2, "0");
+		const secs = String(time % 60).padStart(2, "0");
+		return `${hrs}:${mins}:${secs}`;
+	};
 
+	onMount(() => {
 		const get = async () => {
 			const data = computerData.data; // no point in this; looks better
 			if (!data) return;
 
 			online = data.online;
-			uptimeStart = new Date(data.uptimeStart * 1000); // convert to milliseconds
-			setUptime();
 
 			currentCPU = data.graph[data.graph.length - 1].cpu;
 			currentRAM = data.graph[data.graph.length - 1].ram;
@@ -54,31 +58,22 @@
 
 			clicksPerMinute = totalClicks / 60; // 60 minutes (max graph data)
 			keysPerMinute = totalKeys / 60;
-		};
 
-		const setUptime = () => {
-			if (!uptimeStart || !online) {
+			// Uptime
+			if (!data.online) {
 				uptime = "Offline";
 				return;
 			}
-			const diff = Math.floor((Date.now() - uptimeStart.getTime()) / 1000);
-			const hrs = String(Math.floor(diff / 3600)).padStart(2, "0");
-			const mins = String(Math.floor((diff % 3600) / 60)).padStart(2, "0");
-			const secs = String(diff % 60).padStart(2, "0");
+			const diff = Math.floor((Date.now() - data.uptimeStart * 1000) / 1000);
+			const allTime = diff + data.totals.uptime;
 
-			uptime = `${hrs}:${mins}:${secs}`;
+			uptime = formatTime(diff);
+			allTimeUptime = formatTime(allTime);
 		};
 
 		get();
-		setUptime();
-
-		const interval = setInterval(get, 30000);
-		const uptimeInterval = setInterval(setUptime, 1000);
-
-		return () => {
-			clearInterval(interval);
-			clearInterval(uptimeInterval);
-		};
+		const interval = setInterval(get, 1000);
+		return () => clearInterval(interval);
 	});
 </script>
 
@@ -101,8 +96,8 @@
 		<span class="font-black">Uptime:</span>
 		<span>{uptime}</span>
 
-		<span></span>
-		<span></span>
+		<span class="font-black">All Time Uptime:</span>
+		<span>{allTimeUptime}</span>
 
 		<span class="font-black">All Time Clicks:</span>
 		<span>{allTimeClicks}</span>
