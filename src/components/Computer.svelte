@@ -21,16 +21,24 @@
 
 	let uptime = $state("");
 	let allTimeUptime = $state("");
-	let allTimeClicks = $state(0);
-	let allTimeKeys = $state(0);
+	let allTimeClicks = $state("");
+	let allTimeKeys = $state("");
 
 	let chartData = $state<GraphData>([]);
 
 	const formatTime = (time: number): string => {
-		const hrs = String(Math.floor(time / 3600)).padStart(2, "0");
-		const mins = String(Math.floor((time % 3600) / 60)).padStart(2, "0");
-		const secs = String(time % 60).padStart(2, "0");
-		return `${hrs}:${mins}:${secs}`;
+		const days = Math.floor(time / 86400);
+		const hrs = Math.floor((time % 86400) / 3600);
+		const mins = Math.floor((time % 3600) / 60);
+		const secs = time % 60;
+
+		const parts = [];
+		if (days > 0) parts.push(`${days}d`);
+		if (hrs > 0 || days > 0) parts.push(`${hrs}h`);
+		parts.push(`${mins}m`);
+		parts.push(`${secs}s`);
+
+		return parts.join(" ");
 	};
 
 	onMount(() => {
@@ -43,8 +51,13 @@
 			currentCPU = data.graph[data.graph.length - 1].cpu;
 			currentRAM = data.graph[data.graph.length - 1].ram;
 
-			allTimeClicks = data.totals.clicks;
-			allTimeKeys = data.totals.keys;
+			const numberFormat = Intl.NumberFormat("en-US", {
+				notation: "compact",
+				maximumFractionDigits: 1,
+			});
+
+			allTimeClicks = numberFormat.format(data.totals.clicks);
+			allTimeKeys = numberFormat.format(data.totals.keys);
 
 			chartData = data.graph.map((point) => ({
 				...point,
