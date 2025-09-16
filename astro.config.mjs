@@ -21,7 +21,8 @@ export default defineConfig({
 	adapter: nekoweb({
 		apiKey: NEKOWEB_API_KEY,
 		cookie: NEKOWEB_COOKIE,
-		folder: "dist",
+		siteName: "trafficlunar",
+		domain: "trafficlunar.nekoweb.org",
 	}),
 	integrations: [svelte(), sitemap(), swup()],
 });
