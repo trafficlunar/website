@@ -1,8 +1,8 @@
 <script lang="ts">
 	const links = [
 		{ name: "home", url: "/" },
-		{ name: "status", url: "/status" },
-		{ name: "uses", url: "/uses" },
+		{ name: "status", url: "/status/" },
+		{ name: "uses", url: "/uses/" },
 	];
 
 	let pathname = $state("/");
@@ -25,7 +25,7 @@
 			style="transform: translateX(calc({activeIndex * 100}% + {activeIndex * 0.375}rem));"
 		></div>
 
-		{#each links as item, i}
+		{#each links as item}
 			<!-- Div here to hide the hover background behind the animated background -->
 			<div class="flex rounded-sm hover:bg-surface0">
 				<a
