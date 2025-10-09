@@ -3,8 +3,8 @@
 	import ProjectCard from "./ProjectCard.svelte";
 
 	interface Project {
-		owner: string;
 		name: string;
+		owner: string;
 		description: string;
 		stargazers_count: number;
 		language: string;
@@ -28,69 +28,90 @@
 		Svelte: "bg-[#ff3e00]",
 	};
 
-	const additionalData: Record<string, Partial<Project>> = {
-		"tomodachi-share": {
+	let leftColumn: Project[] = $state([
+		{
+			name: "tomodachi-share",
 			owner: "trafficlunar",
 			description: "Discover and share Mii residents for your Tomodachi Life island!",
+			stargazers_count: 0,
+			language: "",
 			url: "https://github.com/trafficlunar/tomodachi-share",
 			websiteUrl: "https://tomodachishare.com",
 			year: 2025,
 			image: "/projects/tomodachi-share.png",
 		},
-		blockmatic: {
-			owner: "trafficlunar",
-			description: "Online pixel art editor for Minecraft (with support for images!)",
-			url: "https://github.com/trafficlunar/blockmatic",
-			websiteUrl: "https://blockmatic.trafficlunar.net",
-			year: 2024,
-			image: "/projects/blockmatic.png",
-		},
-		"options-profiles": {
+		{
+			name: "tomodachi-share",
 			owner: "trafficlunar",
 			description: "A Minecraft mod that lets you load and save your options from in-game",
+			stargazers_count: 0,
+			language: "",
 			url: "https://github.com/trafficlunar/options-profiles",
 			websiteUrl: "https://modrinth.com/mod/options-profiles",
 			year: 2023,
 			image: "/projects/options-profiles.png",
 		},
-		website: {
-			owner: "trafficlunar",
-			description: "You're on it right now! My personal website (also hosted on nekoweb!)",
-			url: "https://github.com/trafficlunar/website",
-		},
-		api: {
+		{
+			name: "api",
 			owner: "trafficlunar",
 			description: "Backend for my website and small projects",
+			stargazers_count: 0,
+			language: "",
 			url: "https://github.com/trafficlunar/api",
 		},
-		"computer-statistics": {
+	]);
+	let rightColumn: Project[] = $state([
+		{
+			name: "blockmatic",
+			owner: "trafficlunar",
+			description: "Online pixel art editor for Minecraft (with support for images!)",
+			stargazers_count: 0,
+			language: "",
+			url: "https://github.com/trafficlunar/blockmatic",
+			websiteUrl: "https://blockmatic.trafficlunar.net",
+			year: 2024,
+			image: "/projects/blockmatic.png",
+		},
+		{
+			name: "website",
+			owner: "trafficlunar",
+			description: "You're on it right now! My personal website (also hosted on nekoweb!)",
+			stargazers_count: 0,
+			language: "",
+			url: "https://github.com/trafficlunar/website",
+		},
+		{
+			name: "computer-statistics",
 			owner: "trafficlunar",
 			description: "A very simple application to send computer statistics (CPU, RAM, keyboard presses, etc.) to my API",
+			stargazers_count: 0,
+			language: "",
 			url: "https://github.com/trafficlunar/computer-statistics",
 		},
-	};
+	]);
 
-	let leftColumn: Project[] = $state([]);
-	let rightColumn: Project[] = $state([]);
-
+	// Send request to API and fill in missing data
 	onMount(async () => {
 		const response = await fetch("https://api.trafficlunar.net/projects");
 		const data: Project[] = await response.json();
 
-		data.forEach((p, index) => {
-			const extra = additionalData[p.name] || {};
-			const project = {
-				...p,
-				color: languageColors[p.language ?? ""] ?? "bg-overlay0",
-				...extra,
-			};
+		const mapProject = (column: Project[]) => {
+			column.forEach((p, index) => {
+				const apiData = data.find((proj) => proj.name === p.name);
+				if (!apiData) return;
 
-			if (index % 2 === 0) {
-				leftColumn.push(project);
-			} else {
-				rightColumn.push(project);
-			}
-		});
+				// Add missing data
+				column[index] = {
+					...p,
+					stargazers_count: apiData.stargazers_count,
+					language: apiData.language,
+					color: languageColors[apiData.language ?? ""] ?? "bg-overlay0", // Get color of language
+				};
+			});
+		};
+
+		mapProject(leftColumn);
+		mapProject(rightColumn);
 	});
 </script>
 
