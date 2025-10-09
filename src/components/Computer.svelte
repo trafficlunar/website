@@ -140,8 +140,8 @@
 			tooltip={{ mode: "bisect-x" }}
 		>
 			<Svg>
-				<Axis placement="left" grid rule classes={{ tickLabel: "fill-overlay1 font-medium" }} format="percentRound" />
-				<Axis placement="bottom" rule classes={{ tickLabel: "fill-overlay1 font-medium" }} />
+				<Axis placement="left" grid rule classes={{ tickLabel: "fill-overlay1 font-medium stroke-none" }} format="percentRound" />
+				<Axis placement="bottom" rule classes={{ tickLabel: "fill-overlay1 font-medium stroke-none" }} />
 
 				<!-- RAM -->
 				<LinearGradient class="from-peach/50 to-peach/1" vertical>
@@ -162,7 +162,7 @@
 				<Highlight y={(d) => d.cpu} points={{ class: "fill-yellow" }} />
 			</Svg>
 
-			<Tooltip.Root class="border border-peach bg-peach/10 text-white/85 backdrop-blur-lg">
+			<Tooltip.Root class="border border-peach bg-peach/10! text-white/85 backdrop-blur-lg!">
 				{#snippet children({ data })}
 					<Tooltip.Header value={data.timestamp} format="time" classes={{ root: "border-peach" }} />
 					<Tooltip.List>
@@ -187,8 +187,8 @@
 		tooltip={{ mode: "bisect-x" }}
 	>
 		<Svg>
-			<Axis placement="left" rule classes={{ tickLabel: "fill-overlay1 font-medium" }} />
-			<Axis placement="bottom" rule classes={{ tickLabel: "fill-overlay1 font-medium" }} />
+			<Axis placement="left" rule classes={{ tickLabel: "fill-overlay1 font-medium stroke-none" }} />
+			<Axis placement="bottom" rule classes={{ tickLabel: "fill-overlay1 font-medium stroke-none" }} />
 
 			<!-- Keys -->
 			<LinearGradient class="from-green/50 to-green/1" vertical>
@@ -209,7 +209,7 @@
 			<Highlight y={(d) => d.clicks} points={{ class: "fill-teal" }} />
 		</Svg>
 
-		<Tooltip.Root class="border border-peach bg-peach/10 text-white/85 backdrop-blur-lg">
+		<Tooltip.Root classes={{ container: "border border-peach bg-peach/10! text-white/85 backdrop-blur-lg!" }}>
 			{#snippet children({ data })}
 				<Tooltip.Header value={data.timestamp} format="time" classes={{ root: "border-peach" }} />
 				<Tooltip.List>
