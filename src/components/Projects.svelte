@@ -41,7 +41,7 @@
 			image: "/projects/tomodachi-share.png",
 		},
 		{
-			name: "tomodachi-share",
+			name: "options-profiles",
 			owner: "trafficlunar",
 			description: "A Minecraft mod that lets you load and save your options from in-game",
 			stargazers_count: 0,
