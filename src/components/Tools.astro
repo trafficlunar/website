@@ -16,17 +16,19 @@ import DockerIcon from "../assets/icons/coding/docker.svg";
 import LinuxIcon from "../assets/icons/coding/linux.svg";
 ---
 
-<section class="!mb-0">
+<section class="mb-0! transition-all duration-300 delay-200 starting:opacity-0 starting:translate-y-4">
 	<legend>tools</legend>
 
 	<!-- separator -->
-	<div class="flex items-center gap-2 text-overlay2 text-sm font-medium mb-2">
-		<hr class="w-4 border-surface1" />
+	<div class="flex items-center gap-2 text-overlay1 text-sm font-medium mb-2">
+		<hr class="w-4 border-surface0" />
 		<span>editors</span>
-		<hr class="flex-grow border-surface1" />
+		<hr class="grow border-surface0" />
 	</div>
 
-	<div class="flex flex-wrap gap-1 mb-4 *:bg-surface0/50 *:border *:border-surface1 *:rounded-md *:p-1.5 *:text-sm *:flex *:items-center *:gap-1.5">
+	<div
+		class="flex flex-wrap gap-1 mb-4 *:bg-surface0/50 *:shadow *:border *:border-surface1/50 *:rounded-md *:p-1.5 *:text-sm *:flex *:items-center *:gap-1.5"
+	>
 		<div>
 			<VSCodiumIcon class="size-5" />
 			<span>VSCodium</span>
@@ -38,13 +40,15 @@ import LinuxIcon from "../assets/icons/coding/linux.svg";
 	</div>
 
 	<!-- separator -->
-	<div class="flex items-center gap-2 text-overlay2 text-sm font-medium my-2">
-		<hr class="w-4 border-surface1" />
+	<div class="flex items-center gap-2 text-overlay1 text-sm font-medium my-2">
+		<hr class="w-4 border-surface0" />
 		<span>languages</span>
-		<hr class="flex-grow border-surface1" />
+		<hr class="grow border-surface0" />
 	</div>
 
-	<div class="flex flex-wrap gap-1 mb-4 *:bg-surface0/50 *:border *:border-surface1 *:rounded-md *:p-1.5 *:text-sm *:flex *:items-center *:gap-1.5">
+	<div
+		class="flex flex-wrap gap-1 mb-4 *:bg-surface0/50 *:shadow *:border *:border-surface1/50 *:rounded-md *:p-1.5 *:text-sm *:flex *:items-center *:gap-1.5"
+	>
 		<div>
 			<TypeScriptIcon class="size-5" />
 			<span>TypeScript</span>
@@ -68,13 +72,15 @@ import LinuxIcon from "../assets/icons/coding/linux.svg";
 	</div>
 
 	<!-- separator -->
-	<div class="flex items-center gap-2 text-overlay2 text-sm font-medium my-2">
-		<hr class="w-4 border-surface1" />
+	<div class="flex items-center gap-2 text-overlay1 text-sm font-medium my-2">
+		<hr class="w-4 border-surface0" />
 		<span>frameworks</span>
-		<hr class="flex-grow border-surface1" />
+		<hr class="grow border-surface0" />
 	</div>
 
-	<div class="flex flex-wrap gap-1 mb-4 *:bg-surface0/50 *:border *:border-surface1 *:rounded-md *:p-1.5 *:text-sm *:flex *:items-center *:gap-1.5">
+	<div
+		class="flex flex-wrap gap-1 mb-4 *:bg-surface0/50 *:shadow *:border *:border-surface1/50 *:rounded-md *:p-1.5 *:text-sm *:flex *:items-center *:gap-1.5"
+	>
 		<div>
 			<SvelteIcon class="size-5" />
 			<span>Svelte</span>
@@ -98,12 +104,12 @@ import LinuxIcon from "../assets/icons/coding/linux.svg";
 	</div>
 
 	<!-- separator -->
-	<div class="flex flex-wrap items-center gap-2 text-overlay2 text-sm font-medium my-2">
-		<hr class="w-4 border-surface1" />
+	<div class="flex flex-wrap items-center gap-2 text-overlay1 text-sm font-medium my-2">
+		<hr class="w-4 border-surface0" />
 		<span>infrastructure</span>
-		<hr class="flex-grow border-surface1" />
+		<hr class="grow border-surface0" />
 	</div>
-	<div class="flex gap-1 *:bg-surface0/50 *:border *:border-surface1 *:rounded-md *:p-1.5 *:text-sm *:flex *:items-center *:gap-1.5">
+	<div class="flex gap-1 *:bg-surface0/50 *:shadow *:border *:border-surface1/50 *:rounded-md *:p-1.5 *:text-sm *:flex *:items-center *:gap-1.5">
 		<div>
 			<PostgresIcon class="size-5" />
 			<span>PostgreSQL</span>

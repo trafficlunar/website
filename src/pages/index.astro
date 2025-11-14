@@ -10,7 +10,7 @@ import LocationIcon from "../assets/icons/location.svg";
 ---
 
 <Layout>
-	<section>
+	<section class="transition-all duration-300 delay-100 starting:opacity-0 starting:translate-y-4">
 		<legend>about</legend>
 		<p>
 			Hey! I'm <strong class="text-peach">trafficlunar</strong>. I'm a <Age client:only /> year old self-proclaimed full-stack developer.
@@ -31,11 +31,13 @@ import LocationIcon from "../assets/icons/location.svg";
 
 	<Tools />
 
-	<div class="flex items-center gap-4 text-subtext0 text-sm font-medium my-4">
-		<hr class="flex-grow border-surface1" />
+	<div
+		class="flex items-center gap-4 text-subtext0 text-sm font-medium my-4 transition-all duration-300 delay-250 starting:opacity-0 starting:translate-y-4"
+	>
+		<hr class="grow border-surface1" />
 		<span>projects</span>
-		<hr class="flex-grow border-surface1" />
+		<hr class="grow border-surface1" />
 	</div>
 
-	<Projects client:only />
+	<Projects client:load />
 </Layout>

@@ -19,4 +19,4 @@
 	});
 </script>
 
-<span class="font-mono">{age}</span>
+<span class="font-mono mx-1">{age}</span>

@@ -133,7 +133,7 @@
 	</div>
 {/snippet}
 
-<div class="grid grid-cols-2 gap-4 max-sm:grid-cols-1">
+<div class="grid grid-cols-2 gap-4 max-sm:grid-cols-1 transition-all duration-300 delay-300 starting:opacity-0 starting:translate-y-4">
 	{@render projectColumn(leftColumn)}
 	{@render projectColumn(rightColumn)}
 </div>

@@ -24,5 +24,5 @@ export default defineConfig({
 		siteName: "trafficlunar",
 		domain: "trafficlunar.nekoweb.org",
 	}),
-	integrations: [svelte(), sitemap(), swup()],
+	integrations: [svelte(), sitemap(), swup({ theme: false, animationClass: false })],
 });

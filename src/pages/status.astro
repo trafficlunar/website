@@ -6,21 +6,11 @@ import Computer from "../components/Computer.svelte";
 ---
 
 <Layout>
-	<section class="!mb-0 !pt-3">
-		<legend>status</legend>
+	<Music client:load />
 
-		<div class="flex items-center gap-4 text-subtext0 text-sm font-medium mb-4">
-			<hr class="flex-grow border-surface1" />
-			<span>last.fm</span>
-			<hr class="flex-grow border-surface1" />
-		</div>
-		<Music client:only />
+	<section class="pt-0! transition-all duration-300 delay-200 starting:opacity-0 starting:translate-y-4">
+		<legend>computer</legend>
 
-		<div class="flex items-center gap-4 text-subtext0 text-sm font-medium mt-4">
-			<hr class="flex-grow border-surface1" />
-			<span>computer</span>
-			<hr class="flex-grow border-surface1" />
-		</div>
-		<Computer client:only />
+		<Computer client:load />
 	</section>
 </Layout>

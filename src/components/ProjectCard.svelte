@@ -15,7 +15,7 @@
 </script>
 
 <div class="group relative hover:-translate-y-1 transition-transform duration-200">
-	<section class="h-full !p-0 flex flex-col transition-colors group-hover:!border-peach/50">
+	<section class="h-full p-0! flex flex-col transition-colors group-hover:border-peach/50!">
 		{#if year}
 			<span class="absolute top-2 left-2 bg-peach text-base px-2 py-1 rounded-full text-xs font-medium z-10 shadow-md">{year}</span>
 		{/if}
@@ -24,7 +24,7 @@
 		{#if image}
 			<div class="relative overflow-hidden">
 				<img src={image} alt="thumbnail" class="rounded-t-lg object-cover aspect-video w-full" />
-				<div class="absolute inset-0 bg-gradient-to-t from-mantle/90 via-mantle/30 to-transparent"></div>
+				<div class="absolute inset-0 bg-linear-to-t from-mantle/90 via-mantle/30 to-transparent"></div>
 			</div>
 		{/if}
 
@@ -52,7 +52,7 @@
 
 			<!-- Buttons -->
 			<hr class="border-surface0 my-4" />
-			<div class="grid grid-cols-2 gap-2 {!websiteUrl && '!grid-cols-1'}">
+			<div class="grid grid-cols-2 gap-2 {!websiteUrl && 'grid-cols-1!'}">
 				<a
 					href={sourceUrl}
 					class="bg-surface0/50 border border-surface1/50 text-subtext1 font-medium p-2 rounded-md flex justify-center items-center gap-2 text-sm"
