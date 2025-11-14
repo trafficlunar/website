@@ -7,6 +7,7 @@ import "../style.css";
 import Socials from "../components/Socials.astro";
 import Clock from "../components/Clock.svelte";
 import Online from "../components/Online.svelte";
+import Webring from "../components/Webring.astro";
 import Header from "../components/Header.svelte";
 import Footer from "../components/Footer.astro";
 
@@ -39,19 +40,23 @@ import Lunar from "../assets/lunar.svg";
 		<Lunar class="absolute top-8 right-8 size-12 animate-avoid hover:animate-running not-hover:animate-pause" />
 
 		<div class="max-w-4xl w-full grid grid-cols-5 gap-4 py-8 max-[60rem]:grid-cols-1">
-			<div class="flex flex-col items-center gap-8 max-[60rem]:flex-row max-[60rem]:justify-center flex-wrap" transition:persist>
+			<div
+				class="flex flex-col max-[32rem]:flex-row lg:flex-col items-center gap-6 sm:gap-8 lg:gap-8 justify-center md:justify-start"
+				transition:persist
+			>
 				<a href="/">
 					<img
 						src="/pfp.png"
 						alt="profile picture"
-						class="rounded-full animate-spin animate-duration-2s hover:animate-running not-hover:animate-pause max-h-40"
+						class="rounded-full animate-spin animate-duration-2s hover:animate-running not-hover:animate-pause max-h-40 max-w-40"
 					/>
 				</a>
 
-				<div class="flex flex-col flex-wrap justify-center w-full max-[60rem]:flex-row max-[60rem]:mt-0 max-[60rem]:gap-2">
+				<div class="flex flex-row sm:flex-row lg:flex-col flex-wrap justify-center items-start gap-2 sm:gap-3 lg:gap-0 w-auto lg:w-full lg:max-w-40">
 					<Socials />
 					<Clock client:only />
 					<Online client:only />
+					<Webring />
 				</div>
 			</div>
 
