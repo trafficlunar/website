@@ -2,6 +2,7 @@
 	const links = [
 		{ name: "home", url: "/" },
 		{ name: "status", url: "/status/" },
+		{ name: "buttons", url: "/buttons/" },
 	];
 
 	let pathname = $state("/");
@@ -25,11 +26,11 @@
 </script>
 
 <section class="p-1.5! mb-8 w-fit">
-	<div class="relative grid grid-cols-2 gap-1.5">
+	<div class="relative grid grid-cols-3 gap-1.5">
 		<!-- Animated background for active link -->
 		{#if activeIndex !== -1}
 			<div
-				class="absolute inset-0 bg-peach rounded w-[calc((100%/2)-0.25rem)] pointer-events-none z-10 transition-all duration-300 ease-out"
+				class="absolute inset-0 bg-peach rounded w-[calc((100%/3)-0.25rem)] pointer-events-none z-10 transition-all duration-300 ease-out"
 				style="transform: translateX(calc({activeIndex * 100}% + {activeIndex * 0.375}rem)) {isTransitioning ? 'scale(1.1)' : 'scale(1)'};"
 			></div>
 		{/if}
