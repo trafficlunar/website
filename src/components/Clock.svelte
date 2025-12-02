@@ -1,8 +1,8 @@
 <script lang="ts">
 	import { onMount } from "svelte";
 
-	let clock = $state("");
-	let date = $state("");
+	let clock = $state("00:00:00 am");
+	let date = $state("1 Dec");
 
 	const myTimezone = "Europe/London";
 

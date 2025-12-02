@@ -38,7 +38,7 @@
 			url: "https://github.com/trafficlunar/tomodachi-share",
 			websiteUrl: "https://tomodachishare.com",
 			year: 2025,
-			image: "/projects/tomodachi-share.png",
+			image: "/projects/tomodachi-share.webp",
 		},
 		{
 			name: "options-profiles",
@@ -49,7 +49,7 @@
 			url: "https://github.com/trafficlunar/options-profiles",
 			websiteUrl: "https://modrinth.com/mod/options-profiles",
 			year: 2023,
-			image: "/projects/options-profiles.png",
+			image: "/projects/options-profiles.webp",
 		},
 		{
 			name: "api",
@@ -70,7 +70,7 @@
 			url: "https://github.com/trafficlunar/blockmatic",
 			websiteUrl: "https://blockmatic.trafficlunar.net",
 			year: 2024,
-			image: "/projects/blockmatic.png",
+			image: "/projects/blockmatic.webp",
 		},
 		{
 			name: "website",

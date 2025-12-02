@@ -4,6 +4,8 @@ import "@fontsource-variable/jetbrains-mono";
 
 import "../style.css";
 
+import { Image } from "astro:assets";
+
 import Socials from "../components/Socials.astro";
 import Clock from "../components/Clock.svelte";
 import Online from "../components/Online.svelte";
@@ -12,9 +14,9 @@ import Header from "../components/Header.svelte";
 import Footer from "../components/Footer.astro";
 
 import KawaiiLogo from "../assets/kawaii.svg";
-
 import TrafficConeAlt from "../assets/traffic-cone-alt.svg";
 import Lunar from "../assets/lunar.svg";
+import ProfilePicture from "../../public/pfp.webp";
 ---
 
 <html lang="en">
@@ -25,19 +27,53 @@ import Lunar from "../assets/lunar.svg";
 		<meta name="generator" content={Astro.generator} />
 		<title>trafficlunar.net</title>
 
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 		<meta name="title" content="trafficlunar.net" />
 		<meta name="description" content="welcome to trafficlunar's website!" />
 		<meta name="keywords" content="trafficlunar, programming" />
 		<meta name="robots" content="index, follow" />
-		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 		<meta name="language" content="English" />
+
+		<!-- Open Graph -->
+		<meta property="og:type" content="website" />
+		<meta property="og:url" content="https://trafficlunar.net" />
+		<meta property="og:title" content="trafficlunar.net" />
+		<meta property="og:description" content="welcome to trafficlunar's website!" />
+		<meta property="og:image" content="https://trafficlunar.net/preview.webp" />
+
+		<!-- Twitter -->
+		<meta property="twitter:card" content="summary_large_image" />
+		<meta property="twitter:url" content="https://trafficlunar.net" />
+		<meta property="twitter:title" content="trafficlunar.net" />
+		<meta property="twitter:description" content="welcome to trafficlunar's website!" />
+		<meta property="twitter:image" content="https://trafficlunar.net/preview.webp" />
+
+		<!-- Preconnect to API -->
+		<link rel="preconnect" href="https://api.trafficlunar.net" crossorigin />
+
+		<script
+			type="application/ld+json"
+			set:html={JSON.stringify({
+				"@context": "https://schema.org/",
+				"@type": "Person",
+				name: "trafficlunar",
+				url: "https://trafficlunar.net",
+				image: "https://trafficlunar.net/pfp.webp",
+				sameAs: [
+					"https://github.com/trafficlunar",
+					"https://twitter.com/trafficlunr",
+					"https://bsky.app/profile/trafficlunar.net",
+					"https://anilist.co/user/trafficlunar",
+				],
+			})}
+		/>
 	</head>
 	<body class="bg-base text-text flex flex-col items-center px-8">
-		<a href="/" transition:persist>
+		<a href="/" aria-label="trafficlunar logo" transition:persist>
 			<KawaiiLogo class="w-full h-48 mt-16 drop-shadow-md transition-transform duration-300 hover:rotate-2 hover:scale-105" />
 		</a>
 
-		<Lunar class="absolute top-8 right-8 size-12 animate-avoid hover:animate-running not-hover:animate-pause" />
+		<Lunar aria-hidden class="absolute top-8 right-8 size-12 animate-avoid hover:animate-running not-hover:animate-pause" />
 
 		<div class="max-w-4xl w-full grid grid-cols-5 gap-4 py-8 max-[60rem]:grid-cols-1">
 			<div
@@ -45,9 +81,13 @@ import Lunar from "../assets/lunar.svg";
 				transition:persist
 			>
 				<a href="/">
-					<img
-						src="/pfp.png"
+					<Image
+						src={ProfilePicture}
+						fetchpriority="high"
+						width="160"
+						height="160"
 						alt="profile picture"
+						decoding="async"
 						class="rounded-full animate-spin animate-duration-2s hover:animate-running not-hover:animate-pause max-h-40 max-w-40 min-h-40 min-w-40"
 					/>
 				</a>
@@ -61,8 +101,8 @@ import Lunar from "../assets/lunar.svg";
 			</div>
 
 			<div class="sm:col-span-4 flex flex-col relative">
-				<TrafficConeAlt class="absolute size-12 bottom-full left-16 text-peach" />
-				<TrafficConeAlt class="absolute size-14 bottom-full left-27 text-peach" />
+				<TrafficConeAlt aria-hidden class="absolute size-12 bottom-full left-16 text-peach" />
+				<TrafficConeAlt aria-hidden class="absolute size-14 bottom-full left-27 text-peach" />
 
 				<Header client:only />
 				<!-- need <main /> for transitions -->

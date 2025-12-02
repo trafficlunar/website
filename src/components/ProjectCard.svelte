@@ -23,7 +23,7 @@
 		<!-- Image -->
 		{#if image}
 			<div class="relative overflow-hidden">
-				<img src={image} alt="thumbnail" class="rounded-t-lg object-cover aspect-video w-full" />
+				<img src={image} width="600" height="300" loading="lazy" alt="thumbnail" class="rounded-t-lg object-cover aspect-video w-full" />
 				<div class="absolute inset-0 bg-linear-to-t from-mantle/90 via-mantle/30 to-transparent"></div>
 			</div>
 		{/if}

@@ -16,17 +16,17 @@
 		"@indiefellas/astro-adapter-nekoweb": "^3.7.1",
 		"@swup/astro": "^1.7.0",
 		"@tailwindcss/vite": "^4.1.17",
-		"astro": "^5.15.7",
+		"astro": "^5.16.3",
 		"d3-scale": "^4.0.2",
 		"d3-shape": "^3.2.0",
-		"layerchart": "2.0.0-next.43",
-		"svelte": "^5.43.6",
+		"layerchart": "^2.0.0-next.43",
+		"svelte": "^5.45.3",
 		"tailwindcss": "^4.1.17",
 		"typescript": "^5.9.3"
 	},
 	"devDependencies": {
 		"@types/d3-scale": "^4.0.9",
 		"@types/d3-shape": "^3.1.7",
-		"vite": "^7.2.2"
+		"vite": "^7.2.6"
 	}
 }

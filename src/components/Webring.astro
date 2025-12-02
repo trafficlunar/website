@@ -1,6 +1,8 @@
 ---
+import { Image } from "astro:assets";
 import ArrowRightIcon from "../assets/icons/arrow-right.svg";
 import ArrowLeftIcon from "../assets/icons/arrow-left.svg";
+import CatppuccinIcon from "../../public/catppuccin.webp";
 ---
 
 <div class="w-full flex justify-center items-center">
@@ -8,12 +10,15 @@ import ArrowLeftIcon from "../assets/icons/arrow-left.svg";
 		<ArrowLeftIcon
 			class="size-10.5 p-2 origin-right opacity-65 hover:opacity-100 hover:scale-110 transition-all duration-300"
 			style="transition-timing-function: cubic-bezier(0.34, 1.56, 0.64, 1);"
+			aria-label="Previous site in Catppuccin Webring"
 		/>
 	</a>
 
 	<a data-tooltip="Catppuccin Webring" href="https://ctp-webr.ing/">
-		<img
-			src="/catppuccin.png"
+		<Image
+			src={CatppuccinIcon}
+			width="48"
+			height="48"
 			alt="catppuccin webring"
 			class="size-12 opacity-65 hover:opacity-100 hover:scale-110 transition-all duration-300"
 			style="transition-timing-function: cubic-bezier(0.34, 1.56, 0.64, 1);"
@@ -24,6 +29,7 @@ import ArrowLeftIcon from "../assets/icons/arrow-left.svg";
 		<ArrowRightIcon
 			class="size-10.5 p-2 origin-left opacity-65 hover:opacity-100 hover:scale-110 transition-all duration-300"
 			style="transition-timing-function: cubic-bezier(0.34, 1.56, 0.64, 1);"
+			aria-label="Next site in Catppuccin Webring"
 		/>
 	</a>
 </div>
