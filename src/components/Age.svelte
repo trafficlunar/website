@@ -6,7 +6,7 @@
 	onMount(() => {
 		const interval = setInterval(() => {
 			// only people who can read code can see my birthday
-			const birthday = new Date(2010, 2, 3);
+			const birthday = new Date("2010-02-03T00:00:00.000Z");
 			const currentDate = new Date();
 
 			const diffInMs = currentDate.getTime() - birthday.getTime();
