@@ -91,6 +91,16 @@ section legend {
 	@apply bg-base-darker absolute -left-[1px] bottom-full px-2 py-0.5 text-overlay2 font-medium text-xs rounded-t-md border border-surface0 border-b-0 font-sans;
 }
 
+section legend::before {
+	@apply content-[''] absolute left-full top-3.5 w-1.5 h-1.5 z-10 bg-surface0;
+	clip-path: path("M 0,0 V 6 H 6 V 5 C 4.4222222,5 3.2053914,4.4905476 2.3574219,3.6425781 1.5094524,2.7946086 1,1.5777778 1,0 Z");
+}
+
+section legend::after {
+	@apply content-[''] absolute left-full top-3.5 w-1.5 h-1.5 z-20 bg-base-darker;
+	clip-path: path("M 0,0 V 6 H 6 C 2.4,6 0,3.6 0,0 Z");
+}
+
 .link {
 	@apply text-peach underline decoration-peach hover:bg-peach hover:text-base;
 }
