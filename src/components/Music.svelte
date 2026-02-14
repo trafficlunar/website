@@ -37,14 +37,7 @@
 
 		<a href={url} class="block relative h-24 group">
 			<div class="absolute p-2 flex gap-2 z-30 w-full">
-				<img
-					src={image}
-					width="80"
-					height="80"
-					fetchpriority="high"
-					alt="album cover"
-					class="size-20 rounded-full animate-spin animate-duration-30s"
-				/>
+				<img src={image} width="80" height="80" fetchpriority="high" alt="album cover" class="size-20 rounded-full animate-spin animate-duration-30s" />
 
 				<div class="flex flex-col w-full min-w-0">
 					<h1 class="font-medium text-lg truncate">{song}</h1>
