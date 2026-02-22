@@ -98,7 +98,7 @@
 	});
 </script>
 
-<div class="relative transition-all duration-300 delay-200 starting:opacity-0 starting:translate-y-4">
+<div class="relative transition-[translate,opacity] duration-300 delay-200 starting:opacity-0 starting:translate-y-4">
 	<div class="flex justify-center items-center absolute -top-2 right-2 z-0">
 		<div class="w-4 h-4 rounded-full {online ? 'bg-green' : 'bg-red'}"></div>
 		<div class="w-4 h-4 rounded-full absolute animate-duration-2s animate-delay-2s {online ? 'bg-green animate-ping' : 'bg-red'}"></div>

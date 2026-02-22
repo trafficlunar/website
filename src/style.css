@@ -19,6 +19,39 @@
 		}
 	}
 
+	/* Catppuccin Latte */
+	--color-rosewater: #dc8a78;
+	--color-flamingo: #dd7878;
+	--color-pink: #ea76cb;
+	--color-mauve: #8839ef;
+	--color-red: #d20f39;
+	--color-maroon: #e64553;
+	--color-peach: #fe640b;
+	--color-yellow: #df8e1d;
+	--color-green: #40a02b;
+	--color-teal: #179287;
+	--color-sky: #04a5e5;
+	--color-sapphire: #209fb5;
+	--color-blue: #1e66f5;
+	--color-lavender: #7287fd;
+	--color-text: #4c4f69;
+	--color-subtext1: #5c5f77;
+	--color-subtext0: #6c6f85;
+	--color-overlay2: #7c7f93;
+	--color-overlay1: #8c8fa1;
+	--color-overlay0: #9ca0b0;
+	--color-surface2: #acb0be;
+	--color-surface1: #bcc0cc;
+	--color-surface0: #ccd0da;
+	--color-base: #eff1f5;
+	--color-mantle: #e6e9ef;
+	--color-crust: #dce0e8;
+
+	--color-base-darker: #eceef3;
+	--color-peach-darker: #ebcec1;
+}
+
+html[data-theme="dark"] {
 	/* Catppuccin Frappe */
 	--color-rosewater: #f2d5cf;
 	--color-flamingo: #eebebe;
@@ -120,4 +153,22 @@ section legend::after {
 [data-tooltip]:hover::before,
 [data-tooltip]:hover::after {
 	@apply opacity-100 scale-100;
+}
+
+/* Theme switching transition */
+::view-transition-new(root) {
+	mask: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40"><circle cx="40" cy="0" r="20" fill="white"/></svg>') right top / 0
+		no-repeat;
+	animation: scale 1s;
+	animation-fill-mode: both;
+}
+
+::view-transition-old(root) {
+	animation: none;
+}
+
+@keyframes scale {
+	to {
+		mask-size: 250vmax;
+	}
 }

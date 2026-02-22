@@ -6,6 +6,7 @@ import "../style.css";
 
 import { Image } from "astro:assets";
 
+import ThemeButton from "../components/ThemeButton.svelte";
 import Socials from "../components/Socials.astro";
 import Clock from "../components/Clock.svelte";
 import Online from "../components/Online.svelte";
@@ -15,11 +16,10 @@ import Footer from "../components/Footer.astro";
 
 import KawaiiLogo from "../assets/kawaii.svg";
 import TrafficConeAlt from "../assets/traffic-cone-alt.svg";
-import Lunar from "../assets/lunar.svg";
 import ProfilePicture from "../../public/pfp.webp";
 ---
 
-<html lang="en">
+<html lang="en" data-theme="dark">
 	<head>
 		<meta charset="utf-8" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
@@ -71,10 +71,10 @@ import ProfilePicture from "../../public/pfp.webp";
 	</head>
 	<body class="bg-base text-text flex flex-col items-center px-8">
 		<a href="/" aria-label="trafficlunar logo" transition:persist>
-			<KawaiiLogo class="w-full h-48 mt-16 drop-shadow-md transition-transform duration-300 hover:rotate-2 hover:scale-105" />
+			<KawaiiLogo class="w-full h-50 mt-16 pb-1.5 drop-shadow-md transition-transform duration-300 hover:rotate-2 hover:scale-105" />
 		</a>
 
-		<Lunar aria-hidden class="absolute top-8 right-8 size-12 animate-avoid hover:animate-running not-hover:animate-pause" />
+		<ThemeButton client:only />
 
 		<div class="max-w-4xl w-full grid grid-cols-5 gap-4 py-8 max-[60rem]:grid-cols-1">
 			<div class="flex flex-col max-[32rem]:flex-row lg:flex-col items-center gap-6 sm:gap-8 lg:gap-8 justify-center md:justify-start" transition:persist>
@@ -86,7 +86,7 @@ import ProfilePicture from "../../public/pfp.webp";
 						height="160"
 						alt="profile picture"
 						decoding="async"
-						class="rounded-full animate-spin animate-duration-2s hover:animate-running not-hover:animate-pause max-h-40 max-w-40 min-h-40 min-w-40"
+						class="rounded-full drop-shadow-md animate-spin animate-duration-2s hover:animate-running not-hover:animate-pause max-h-40 max-w-40 min-h-40 min-w-40"
 					/>
 				</a>
 
