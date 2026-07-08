@@ -197,7 +197,7 @@
 				yDomain={[0, 1]}
 				yNice
 				padding={{ left: 32, top: 8, right: 12, bottom: 20 }}
-				tooltip={{ mode: "bisect-x" }}
+				tooltipContext={{ mode: "bisect-x" }}
 			>
 				<Svg>
 					<Axis
@@ -261,7 +261,7 @@
 				yDomain={[0, null]}
 				yNice
 				padding={{ left: 32, top: 8, right: 12, bottom: 20 }}
-				tooltip={{ mode: "bisect-x" }}
+				tooltipContext={{ mode: "bisect-x" }}
 			>
 				<Svg>
 					<Axis
