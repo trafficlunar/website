@@ -17,7 +17,10 @@
 <div class="group relative hover:-translate-y-1 transition-transform duration-200">
 	<section class="h-full p-0! flex flex-col transition-colors group-hover:border-peach/50!">
 		{#if year}
-			<span class="absolute top-2 left-2 bg-peach text-base px-2 py-1 rounded-full text-xs font-medium z-10 shadow-md">{year}</span>
+			<span
+				class={`absolute bg-peach text-base px-2 py-1 rounded-full text-xs font-medium z-10 shadow-md
+			${image ? "top-2 left-2" : "top-4 right-4"}`}>{year}</span
+			>
 		{/if}
 
 		<!-- Image -->
@@ -67,10 +70,7 @@
 				</a>
 
 				{#if websiteUrl}
-					<a
-						href={websiteUrl}
-						class="bg-peach/25 border border-peach/50 text-peach font-medium p-2 rounded-md flex justify-center items-center gap-2 text-sm"
-					>
+					<a href={websiteUrl} class="bg-peach/25 border border-peach/50 text-peach font-medium p-2 rounded-md flex justify-center items-center gap-2 text-sm">
 						<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 48 48"
 							><g fill="none" stroke="currentColor" stroke-width="3"
 								><path stroke-linejoin="round" d="M3 24a21 21 0 1 0 42 0a21 21 0 1 0-42 0" /><path

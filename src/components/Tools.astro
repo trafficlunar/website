@@ -1,19 +1,15 @@
 ---
-import VSCodiumIcon from "../assets/icons/coding/vscodium.svg";
-import IntelliJIdeaIcon from "../assets/icons/coding/intellij.svg";
 import TypeScriptIcon from "../assets/icons/coding/typescript.svg";
 import GoIcon from "../assets/icons/coding/go.svg";
 import RustIcon from "../assets/icons/coding/rust.svg";
 import LuaUIcon from "../assets/icons/coding/lua.svg";
 import JavaIcon from "../assets/icons/coding/java.svg";
+import PythonIcon from "../assets/icons/coding/python.svg";
 import SvelteIcon from "../assets/icons/coding/svelte.svg";
 import ReactIcon from "../assets/icons/coding/react.svg";
 import NextIcon from "../assets/icons/coding/next.svg";
 import AstroIcon from "../assets/icons/coding/astro.svg";
 import TailwindIcon from "../assets/icons/coding/tailwind.svg";
-import PostgresIcon from "../assets/icons/coding/postgres.svg";
-import DockerIcon from "../assets/icons/coding/docker.svg";
-import LinuxIcon from "../assets/icons/coding/linux.svg";
 ---
 
 <section class="mb-0! transition-[translate,opacity] duration-300 delay-200 starting:opacity-0 starting:translate-y-4">
@@ -21,24 +17,6 @@ import LinuxIcon from "../assets/icons/coding/linux.svg";
 
 	<!-- separator -->
 	<div class="flex items-center gap-2 text-overlay1 text-sm font-medium mb-2">
-		<hr class="w-4 border-surface0" />
-		<span>editors</span>
-		<hr class="grow border-surface0" />
-	</div>
-
-	<div class="flex flex-wrap gap-1 mb-4 *:bg-surface0/30 *:shadow *:border *:border-surface1/50 *:rounded-md *:p-1.5 *:text-sm *:flex *:items-center *:gap-1.5">
-		<div>
-			<VSCodiumIcon class="size-5" />
-			<span>VSCodium</span>
-		</div>
-		<div>
-			<IntelliJIdeaIcon class="size-5" />
-			<span>IntelliJ IDEA</span>
-		</div>
-	</div>
-
-	<!-- separator -->
-	<div class="flex items-center gap-2 text-overlay1 text-sm font-medium my-2">
 		<hr class="w-4 border-surface0" />
 		<span>languages</span>
 		<hr class="grow border-surface0" />
@@ -57,13 +35,17 @@ import LinuxIcon from "../assets/icons/coding/linux.svg";
 			<RustIcon class="size-5" />
 			<span>Rust</span>
 		</div>
-		<div data-tooltip="The Roblox version">
+		<div data-tooltip="yes, the Roblox version">
 			<LuaUIcon class="size-5" />
 			<span>Luau</span>
 		</div>
 		<div>
 			<JavaIcon class="size-5" />
 			<span>Java</span>
+		</div>
+		<div>
+			<PythonIcon class="size-5" />
+			<span>Python</span>
 		</div>
 	</div>
 
@@ -74,7 +56,7 @@ import LinuxIcon from "../assets/icons/coding/linux.svg";
 		<hr class="grow border-surface0" />
 	</div>
 
-	<div class="flex flex-wrap gap-1 mb-4 *:bg-surface0/30 *:shadow *:border *:border-surface1/50 *:rounded-md *:p-1.5 *:text-sm *:flex *:items-center *:gap-1.5">
+	<div class="flex flex-wrap gap-1 *:bg-surface0/30 *:shadow *:border *:border-surface1/50 *:rounded-md *:p-1.5 *:text-sm *:flex *:items-center *:gap-1.5">
 		<div>
 			<SvelteIcon class="size-5" />
 			<span>Svelte</span>
@@ -94,27 +76,6 @@ import LinuxIcon from "../assets/icons/coding/linux.svg";
 		<div>
 			<TailwindIcon class="size-5" />
 			<span>Tailwind</span>
-		</div>
-	</div>
-
-	<!-- separator -->
-	<div class="flex flex-wrap items-center gap-2 text-overlay1 text-sm font-medium my-2">
-		<hr class="w-4 border-surface0" />
-		<span>infrastructure</span>
-		<hr class="grow border-surface0" />
-	</div>
-	<div class="flex flex-wrap gap-1 *:bg-surface0/30 *:shadow *:border *:border-surface1/50 *:rounded-md *:p-1.5 *:text-sm *:flex *:items-center *:gap-1.5">
-		<div>
-			<PostgresIcon class="size-5" />
-			<span>PostgreSQL</span>
-		</div>
-		<div>
-			<DockerIcon class="size-5" />
-			<span>Docker</span>
-		</div>
-		<div>
-			<LinuxIcon class="size-5" />
-			<span>Linux</span>
 		</div>
 	</div>
 </section>

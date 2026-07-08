@@ -73,6 +73,15 @@
 			image: "/projects/blockmatic.webp",
 		},
 		{
+			name: "jellyfin-spicetify",
+			owner: "trafficlunar",
+			description: "Spicetify plugin to play Jellyfin songs on the Spotify client - maybe I'll continue it eventually",
+			stargazers_count: 0,
+			language: "",
+			url: "https://github.com/trafficlunar/jellyfin-spicetify",
+			year: 2026,
+		},
+		{
 			name: "website",
 			owner: "trafficlunar",
 			description: "You're on it right now! My personal website (also hosted on nekoweb!)",
